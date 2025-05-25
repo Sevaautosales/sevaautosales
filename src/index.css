@@ -1,0 +1,564 @@
+/* Tailwind CSS imports */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom root variables for the color scheme */
+:root {
+  --primary-color: #0056b3;
+  --primary-hover: #004494;
+  --secondary-color: #ff6b00;
+  --secondary-hover: #e05c00;
+  --dark-bg: #1a202c;
+  --light-bg: #f8fafc;
+  --text-dark: #1a202c;
+  --text-light: #f8fafc;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+}
+
+/* Global styles */
+body {
+  @apply text-gray-800 bg-gray-50 transition-colors duration-300 ease-in-out;
+  line-height: 1.6;
+}
+
+body.dark {
+  @apply bg-gray-900 text-gray-100;
+}
+
+/* Global focus styles for accessibility */
+*:focus-visible {
+  @apply outline-2 outline-offset-2 outline-blue-500;
+}
+
+/* Custom utility classes */
+.container-custom {
+  @apply container mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Smooth scrolling for entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Accessibility text utilities */
+.sr-only {
+  @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0;
+}
+
+/* Animation classes that can be used with Framer Motion */
+.page-transition {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+/* Custom heading styles */
+h1, h2, h3, h4, h5, h6 {
+  @apply font-semibold leading-tight mb-2;
+}
+
+h1 {
+  @apply text-4xl md:text-5xl;
+}
+
+h2 {
+  @apply text-3xl md:text-4xl;
+}
+
+h3 {
+  @apply text-2xl md:text-3xl;
+}
+
+/* Custom section padding */
+.section-padding {
+  @apply py-12 md:py-20;
+}
+
+/* Button styles */
+.btn {
+  @apply inline-flex items-center justify-center px-5 py-3 rounded-md text-base font-medium transition-all duration-200;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  @apply bg-blue-600 text-white hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+}
+
+.btn-secondary {
+  @apply bg-orange-500 text-white hover:bg-orange-600 focus:ring-2 focus:ring-orange-400 focus:ring-offset-2;
+}
+
+.btn-outline {
+  @apply border border-gray-300 text-gray-700 hover:bg-gray-100 dark:text-gray-100 dark:border-gray-600 dark:hover:bg-gray-800;
+}
+
+/* Form input styles */
+.form-input {
+  @apply px-4 py-2 rounded-md border border-gray-300 w-full dark:bg-gray-800 dark:border-gray-700 transition-all duration-200;
+}
+
+.form-input:focus {
+  @apply ring-2 ring-blue-500 border-blue-500;
+  box-shadow: var(--shadow-md);
+}
+
+/* Card styles */
+.card {
+  @apply bg-white dark:bg-gray-800 rounded-lg p-6 transition-all duration-300;
+  box-shadow: var(--shadow-md);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+/* =======================
+   MEDIA QUERIES BY DEVICE SIZE
+   ======================= */
+
+/* Extra Small Devices - Portrait phones (320px to 479px) */
+@media screen and (max-width: 479px) {
+  .container-custom {
+    @apply px-3;
+  }
+  
+  h1 {
+    @apply text-2xl leading-tight;
+  }
+  
+  h2 {
+    @apply text-xl;
+  }
+  
+  h3 {
+    @apply text-lg;
+  }
+  
+  .btn {
+    @apply px-4 py-2 text-sm w-full;
+  }
+  
+  .section-padding {
+    @apply py-8;
+  }
+  
+  .form-input {
+    @apply text-base; /* Prevents zoom on iOS */
+  }
+  
+  .card {
+    @apply p-4 rounded-md;
+  }
+  
+  /* Stack navigation items vertically */
+  .nav-mobile {
+    @apply flex-col space-y-2;
+  }
+}
+
+/* Small Devices - Landscape phones (480px to 767px) */
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .container-custom {
+    @apply px-4;
+  }
+  
+  h1 {
+    @apply text-3xl;
+  }
+  
+  h2 {
+    @apply text-2xl;
+  }
+  
+  .btn {
+    @apply px-6 py-3;
+  }
+  
+  .section-padding {
+    @apply py-10;
+  }
+  
+  .card {
+    @apply p-5;
+  }
+  
+  /* Two-column grid for small cards */
+  .grid-responsive {
+    @apply grid-cols-2 gap-4;
+  }
+}
+
+/* Medium Devices - Tablets (768px to 1023px) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .container-custom {
+    @apply px-6 max-w-4xl;
+  }
+  
+  h1 {
+    @apply text-4xl;
+  }
+  
+  h2 {
+    @apply text-3xl;
+  }
+  
+  .section-padding {
+    @apply py-16;
+  }
+  
+  .btn {
+    @apply px-8 py-3;
+  }
+  
+  .card {
+    @apply p-6;
+  }
+  
+  /* Three-column grid */
+  .grid-responsive {
+    @apply grid-cols-3 gap-6;
+  }
+  
+  /* Side-by-side layout for forms */
+  .form-row {
+    @apply flex space-x-4;
+  }
+  
+  .form-row .form-input {
+    @apply flex-1;
+  }
+}
+
+/* Large Devices - Desktops (1024px to 1439px) */
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .container-custom {
+    @apply px-8 max-w-6xl;
+  }
+  
+  h1 {
+    @apply text-5xl;
+  }
+  
+  h2 {
+    @apply text-4xl;
+  }
+  
+  .section-padding {
+    @apply py-20;
+  }
+  
+  .btn {
+    @apply px-10 py-4;
+  }
+  
+  .card {
+    @apply p-8;
+  }
+  
+  /* Four-column grid */
+  .grid-responsive {
+    @apply grid-cols-4 gap-8;
+  }
+  
+  /* Enhanced hover effects */
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+  }
+}
+
+/* Extra Large Devices - Large desktops (1440px to 1919px) */
+@media screen and (min-width: 1440px) and (max-width: 1919px) {
+  .container-custom {
+    @apply px-12 max-w-7xl;
+  }
+  
+  h1 {
+    @apply text-6xl;
+  }
+  
+  h2 {
+    @apply text-5xl;
+  }
+  
+  .section-padding {
+    @apply py-24;
+  }
+  
+  .btn {
+    @apply px-12 py-5 text-lg;
+  }
+  
+  .card {
+    @apply p-10;
+  }
+  
+  /* Five-column grid for large screens */
+  .grid-responsive {
+    @apply grid-cols-5 gap-10;
+  }
+}
+
+/* Ultra Wide Screens - 4K and beyond (1920px+) */
+@media screen and (min-width: 1920px) {
+  .container-custom {
+    @apply px-16;
+    max-width: 1800px;
+  }
+  
+  h1 {
+    @apply text-7xl;
+  }
+  
+  h2 {
+    @apply text-6xl;
+  }
+  
+  .section-padding {
+    @apply py-32;
+  }
+  
+  .btn {
+    @apply px-16 py-6 text-xl;
+  }
+  
+  .card {
+    @apply p-12;
+  }
+  
+  /* Six-column grid for ultra-wide */
+  .grid-responsive {
+    @apply grid-cols-6 gap-12;
+  }
+}
+
+/* =======================
+   ORIENTATION-SPECIFIC STYLES
+   ======================= */
+
+/* Portrait orientation */
+@media screen and (orientation: portrait) {
+  .hero-section {
+    @apply text-center;
+  }
+  
+  .btn-group {
+    @apply flex-col space-y-3 space-x-0;
+  }
+  
+  .navigation {
+    @apply flex-col;
+  }
+}
+
+/* Landscape orientation */
+@media screen and (orientation: landscape) {
+  .hero-section {
+    @apply text-left;
+  }
+  
+  .btn-group {
+    @apply flex-row space-x-4 space-y-0;
+  }
+  
+  .navigation {
+    @apply flex-row;
+  }
+}
+
+/* =======================
+   DEVICE-SPECIFIC OPTIMIZATIONS
+   ======================= */
+
+/* Touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .btn {
+    @apply py-4; /* Larger touch targets */
+    min-height: 44px;
+  }
+  
+  .form-input {
+    @apply py-4;
+    min-height: 44px;
+  }
+  
+  .nav-link {
+    @apply py-4 px-6;
+  }
+  
+  /* Remove hover effects on touch devices */
+  .card:hover {
+    transform: none;
+    box-shadow: var(--shadow-md);
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .logo {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+  
+  .icon {
+    @apply w-6 h-6; /* Ensure crisp icons */
+  }
+}
+
+/* =======================
+   PRINT STYLES
+   ======================= */
+
+@media print {
+  * {
+    @apply text-black bg-white;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  
+  .btn {
+    @apply border border-black;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
+  
+  .page-break {
+    page-break-before: always;
+  }
+  
+  h1, h2, h3 {
+    page-break-after: avoid;
+  }
+}
+
+/* =======================
+   ACCESSIBILITY ENHANCEMENTS
+   ======================= */
+
+/* For high contrast mode */
+@media (prefers-contrast: more) {
+  :root {
+    --primary-color: #0040b0;
+    --secondary-color: #e05000;
+  }
+  
+  .btn-primary {
+    @apply bg-blue-800 text-white hover:bg-blue-900 border-2 border-blue-900;
+  }
+  
+  .btn-secondary {
+    @apply bg-orange-700 text-white hover:bg-orange-800 border-2 border-orange-800;
+  }
+  
+  body {
+    @apply text-black bg-white;
+  }
+  
+  .card {
+    @apply border-2 border-gray-800;
+  }
+  
+  a {
+    @apply underline font-medium;
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+  
+  .page-transition {
+    transition: none;
+  }
+  
+  .btn:hover {
+    transform: none;
+  }
+  
+  .card:hover {
+    transform: none;
+  }
+}
+
+/* Dark mode preferences */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-color: #4c9aff;
+    --secondary-color: #ff8533;
+  }
+  
+  body:not(.light) {
+    @apply bg-gray-900 text-gray-100;
+  }
+  
+  .card:not(.light) {
+    @apply bg-gray-800 border-gray-700;
+  }
+}
+
+/* =======================
+   UTILITY CLASSES FOR RESPONSIVE DESIGN
+   ======================= */
+
+/* Responsive text utilities */
+.text-responsive {
+  @apply text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl;
+}
+
+/* Responsive spacing utilities */
+.space-responsive {
+  @apply space-y-4 sm:space-y-6 md:space-y-8 lg:space-y-10 xl:space-y-12;
+}
+
+/* Responsive padding utilities */
+.p-responsive {
+  @apply p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12;
+}
+
+/* Responsive margin utilities */
+.m-responsive {
+  @apply m-4 sm:m-6 md:m-8 lg:m-10 xl:m-12;
+}
+
+/* Hide/show utilities for different screen sizes */
+.hide-mobile {
+  @apply hidden sm:block;
+}
+
+.hide-tablet {
+  @apply sm:hidden lg:block;
+}
+
+.hide-desktop {
+  @apply lg:hidden;
+}
+
+.show-mobile {
+  @apply block sm:hidden;
+}
+
+.show-tablet {
+  @apply hidden sm:block lg:hidden;
+}
+
+.show-desktop {
+  @apply hidden lg:block;
+}
