@@ -8,6 +8,7 @@ import Gallery from '../Components/Gallery';
 import Testimonials from '../Components/Testimonials';
 import Faqs from '../Components/Faqs';
 import Contact from '../Components/Contact';
+import Footer from '../Components/Footer';
 import WhatsAppButton from '../Components/WhatsAppButton';
 
 function App() {
