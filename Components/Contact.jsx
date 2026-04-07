@@ -275,6 +275,7 @@ function Contact() {
                     </div>
 
                     <div className="w-full relative">
+                      <label htmlFor="name" className="sr-only">Full Name</label>
                       <input
                         type="text"
                         id="name"
@@ -284,6 +285,7 @@ function Contact() {
                         placeholder="Your Name"
                         className="w-full pl-10 pr-4 py-3 border rounded-lg bg-slate-50 dark:bg-slate-700 text-slate-800 dark:text-white border-gray-200 dark:border-slate-600 focus:outline-none focus:ring-0 transition-all duration-300 hover:shadow-md focus:shadow-lg"
                         required
+                        aria-required="true"
                       />
 
                       <div
@@ -303,8 +305,9 @@ function Contact() {
                           : "text-gray-400 dark:text-gray-500 group-hover:text-blue-400"
                       }`}
                     >
-                      <Mail size={18} />
+                      <Mail size={18} aria-hidden="true" />
                     </div>
+                    <label htmlFor="email" className="sr-only">Email Address</label>
                     <input
                       type="email"
                       id="email"
@@ -314,6 +317,7 @@ function Contact() {
                       placeholder="Your Email"
                       className="w-full pl-10 pr-4 py-3 border rounded-lg bg-slate-50 dark:bg-slate-700 text-slate-800 dark:text-white border-gray-200 dark:border-slate-600 focus:outline-none focus:ring-0 transition-all duration-300 hover:shadow-md focus:shadow-lg"
                       required
+                      aria-required="true"
                     />
                     <div
                       className={`absolute bottom-1 left-2 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded transition-all duration-500 ease-out`}
@@ -333,8 +337,9 @@ function Contact() {
                           : "text-gray-400 dark:text-gray-500 group-hover:text-blue-400"
                       }`}
                     >
-                      <Phone size={18} />
+                      <Phone size={18} aria-hidden="true" />
                     </div>
+                    <label htmlFor="phone" className="sr-only">Phone Number</label>
                     <input
                       type="tel"
                       id="phone"
@@ -362,8 +367,9 @@ function Contact() {
                           : "text-gray-400 dark:text-gray-500 group-hover:text-blue-400"
                       }`}
                     >
-                      <Car size={18} />
+                      <Car size={18} aria-hidden="true" />
                     </div>
+                    <label htmlFor="vehicleType" className="sr-only">Vehicle Type</label>
                     <select
                       id="vehicleType"
                       name="vehicleType"
@@ -371,6 +377,7 @@ function Contact() {
                       onChange={handleChange}
                       className="w-full pl-10 pr-4 py-3 border rounded-lg bg-slate-50 dark:bg-slate-700 text-slate-800 dark:text-white appearance-none border-gray-200 dark:border-slate-600 focus:outline-none focus:ring-0 transition-all duration-300 hover:shadow-md focus:shadow-lg"
                       required
+                      aria-required="true"
                     >
                       <option value="">Select Vehicle Type</option>
                       <option value="Car">Car</option>
@@ -384,6 +391,7 @@ function Contact() {
                         stroke="currentColor"
                         viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
                       >
                         <path
                           strokeLinecap="round"
@@ -409,8 +417,9 @@ function Contact() {
                           : "text-gray-400 dark:text-gray-500 group-hover:text-blue-400"
                       }`}
                     >
-                      <Settings size={18} />
+                      <Settings size={18} aria-hidden="true" />
                     </div>
+                    <label htmlFor="modificationType" className="sr-only">Modification Type</label>
                     <select
                       id="modificationType"
                       name="modificationType"
@@ -432,6 +441,7 @@ function Contact() {
                         stroke="currentColor"
                         viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
                       >
                         <path
                           strokeLinecap="round"
@@ -458,10 +468,11 @@ function Contact() {
                         : "text-gray-400 dark:text-gray-500 group-hover:text-blue-400"
                     }`}
                   >
-                    <MessageSquare size={18} />
+                    <MessageSquare size={18} aria-hidden="true" />
                   </div>
 
                   <div className="relative">
+                    <label htmlFor="message" className="sr-only">Message</label>
                     <textarea
                       id="message"
                       name="message"
@@ -471,6 +482,7 @@ function Contact() {
                       rows="5"
                       className="w-full pl-10 pr-4 py-3 border rounded-lg bg-slate-50 dark:bg-slate-700 text-slate-800 dark:text-white resize-none border-gray-200 dark:border-slate-600 focus:outline-none focus:ring-0 transition-all duration-300 hover:shadow-md focus:shadow-lg"
                       required
+                      aria-required="true"
                     ></textarea>
 
                     <div className="pointer-events-none absolute left-0 bottom-[0.75rem] w-full h-0.5 px-2">

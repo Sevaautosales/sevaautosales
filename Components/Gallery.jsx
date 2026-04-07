@@ -338,6 +338,7 @@ function GalleryItem({ image, alt, title, index, isVisible, onClick }) {
           src={image} 
           alt={alt} 
           className="w-full h-48 object-cover"
+          loading="lazy"
           style={{
             transform: isHovered ? 'scale(1.08)' : 'scale(1)',
             filter: isHovered ? 'brightness(0.7)' : 'brightness(1)',

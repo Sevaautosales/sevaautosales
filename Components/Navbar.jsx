@@ -13,6 +13,7 @@ function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md shadow-md transition-all"
+      aria-label="Main Navigation"
       style={{
         animation: 'slideInDown 0.8s ease-out forwards',
         transform: 'translateY(-100%)',

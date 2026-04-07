@@ -3,7 +3,7 @@ import { ArrowRight, Car, Bike, Settings } from 'lucide-react';
 
 function ServiceCard({ title, description, icon, index, isVisible }) {
   return (
-    <div 
+    <article 
       className={`relative group bg-white dark:bg-slate-800 rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-1 transition-transform duration-300 ${
         isVisible 
           ? 'opacity-100 translate-y-0' 
@@ -19,7 +19,10 @@ function ServiceCard({ title, description, icon, index, isVisible }) {
       
       {/* Content */}
       <div className="p-6 md:p-8">
-        <div className="inline-flex items-center justify-center w-14 h-14 rounded-lg bg-blue-50 dark:bg-slate-700 text-blue-600 dark:text-blue-400 mb-5 transition-transform group-hover:scale-110 duration-300">
+        <div 
+          className="inline-flex items-center justify-center w-14 h-14 rounded-lg bg-blue-50 dark:bg-slate-700 text-blue-600 dark:text-blue-400 mb-5 transition-transform group-hover:scale-110 duration-300"
+          aria-hidden="true"
+        >
           {icon}
         </div>
         <h3 className="text-xl font-semibold mb-3 text-slate-900 dark:text-white">{title}</h3>
@@ -28,7 +31,7 @@ function ServiceCard({ title, description, icon, index, isVisible }) {
       
       {/* Bottom hover reveal effect */}
       <div className="h-1 w-0 group-hover:w-full bg-gradient-to-r from-blue-400 to-purple-500 transition-all duration-300 absolute bottom-0 left-0"></div>
-    </div>
+    </article>
   );
 }
 
@@ -81,7 +84,7 @@ function Services() {
             Our Specializations
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-slate-900 dark:text-white">
-            Specialized <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Mobility</span> Services
+            Best <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Vehicle Modification</span> Services in Surat
           </h2>
           <p className="text-lg text-slate-600 dark:text-slate-300">
             We provide comprehensive vehicle modifications tailored to your unique needs and preferences.

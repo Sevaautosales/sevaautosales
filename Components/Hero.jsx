@@ -9,7 +9,7 @@ function Hero() {
         <div className="absolute top-10 left-10 w-64 h-64 rounded-full bg-blue-500 opacity-10 dark:opacity-20 blur-3xl"></div>
         <div className="absolute bottom-10 right-10 w-80 h-80 rounded-full bg-purple-600 opacity-10 dark:opacity-20 blur-3xl"></div>
       </div>
-      
+
       <div className="container mx-auto px-4 py-16 md:py-24 lg:py-32 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
           {/* Text content */}
@@ -25,7 +25,7 @@ function Hero() {
               }}>
               Accessible Transportation Solutions
             </div>
-            
+
             <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight"
               style={{
                 animation: 'fadeInUp 0.8s ease-out forwards 0.3s',
@@ -33,7 +33,7 @@ function Hero() {
               }}>
               Freedom to <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Move</span> Without Limits
             </h1>
-            
+
             <p className="text-lg md:text-xl text-slate-700 dark:text-slate-300 max-w-2xl mx-auto lg:mx-0"
               style={{
                 animation: 'fadeInUp 0.8s ease-out forwards 0.5s',
@@ -41,7 +41,7 @@ function Hero() {
               }}>
               We transform vehicles into personalized mobility solutions, empowering individuals with disabilities to experience independence on the road.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
               style={{
                 animation: 'fadeInUp 0.8s ease-out forwards 0.7s',
@@ -61,7 +61,7 @@ function Hero() {
                 Get a Custom Quote
               </a>
             </div>
-            
+
             <div className="pt-4 flex items-center justify-center lg:justify-start space-x-4 text-sm text-slate-600 dark:text-slate-400"
               style={{
                 animation: 'fadeInUp 0.8s ease-out forwards 0.9s',
@@ -77,7 +77,7 @@ function Hero() {
               <div>Certified specialists</div>
             </div>
           </div>
-          
+
           {/* Visual element */}
           <div className="flex-1 relative"
             style={{
@@ -91,7 +91,7 @@ function Hero() {
                     animation: 'fadeInUp 0.6s ease-out forwards 0.8s',
                     opacity: 0,
                   }}>
-                  <Car className="w-8 h-8 mb-2 text-blue-500 dark:text-blue-400" />
+                  <Car className="w-8 h-8 mb-2 text-blue-500 dark:text-blue-400" aria-hidden="true" />
                   <h3 className="font-medium">Car Modifications</h3>
                   <p className="text-sm text-slate-600 dark:text-slate-300 mt-1">Custom steering, braking & access solutions</p>
                 </div>
@@ -100,7 +100,7 @@ function Hero() {
                     animation: 'fadeInUp 0.6s ease-out forwards 1s',
                     opacity: 0,
                   }}>
-                  <Bike className="w-8 h-8 mb-2 text-purple-500 dark:text-purple-400" />
+                  <Bike className="w-8 h-8 mb-2 text-purple-500 dark:text-purple-400" aria-hidden="true" />
                   <h3 className="font-medium">Adapted Bikes</h3>
                   <p className="text-sm text-slate-600 dark:text-slate-300 mt-1">Specialized bikes for all mobility needs</p>
                 </div>
@@ -115,7 +115,7 @@ function Hero() {
                   </p>
                 </div>
               </div>
-              
+
               {/* Decorative elements */}
               <div className="absolute -top-4 -right-4 w-8 h-8 rounded-full bg-blue-500 opacity-70 dark:opacity-80"></div>
               <div className="absolute -bottom-4 -left-4 w-8 h-8 rounded-full bg-purple-600 opacity-70 dark:opacity-80"></div>
@@ -123,7 +123,7 @@ function Hero() {
           </div>
         </div>
       </div>
-      
+
       {/* CSS for animations */}
       <style jsx>{`
         @keyframes fadeInUp {
