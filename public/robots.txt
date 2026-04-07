@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sevaaautosales.vercel.app/sitemap.xml
+Sitemap: https://sevaautosales.vercel.app/sitemap.xml
