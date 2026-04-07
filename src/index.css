@@ -42,6 +42,7 @@ body.dark {
 /* Smooth scrolling for entire page */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5rem; /* 80px padding for sticky header */
 }
 
 /* Accessibility text utilities */

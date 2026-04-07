@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Sun, Moon } from 'lucide-react';
 import { useTheme } from './ThemeProvider';
+import { motion, AnimatePresence } from 'framer-motion';
 
 
 function Navbar() {
@@ -55,13 +56,26 @@ function Navbar() {
           <a href="#contact" className="nav-link text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 relative py-2 transition-colors duration-300">
             Contact
           </a>
-          
           <button 
             onClick={toggleDarkMode}
-            className="p-2 rounded-full bg-gray-100 dark:bg-gray-700 hover:scale-110 hover:rotate-12 transition-all duration-300 hover:shadow-lg"
+            className="relative p-2 rounded-xl bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300 group overflow-hidden"
             aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
           >
-            {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.div
+                key={darkMode ? "sun" : "moon"}
+                initial={{ y: -20, opacity: 0, rotate: -90 }}
+                animate={{ y: 0, opacity: 1, rotate: 0 }}
+                exit={{ y: 20, opacity: 0, rotate: 90 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                className="flex items-center justify-center text-amber-500 dark:text-blue-400"
+              >
+                {darkMode ? <Sun size={22} fill="currentColor" fillOpacity={0.2} /> : <Moon size={22} fill="currentColor" fillOpacity={0.2} />}
+              </motion.div>
+            </AnimatePresence>
+            
+            {/* Subtle glow effect */}
+            <div className="absolute inset-0 bg-amber-500/0 dark:bg-blue-400/0 group-hover:bg-amber-500/5 dark:group-hover:bg-blue-400/5 transition-colors duration-300" />
           </button>
         </div>
         
@@ -73,10 +87,20 @@ function Navbar() {
           }}>
           <button 
             onClick={toggleDarkMode}
-            className="p-2 mr-2 rounded-full bg-gray-100 dark:bg-gray-700 hover:scale-110 hover:rotate-12 transition-all duration-300"
+            className="p-2 mr-3 rounded-xl bg-gray-100 dark:bg-gray-800 text-amber-500 dark:text-blue-400"
             aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
           >
-            {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.div
+                key={darkMode ? "sun-mobile" : "moon-mobile"}
+                initial={{ scale: 0.5, opacity: 0, rotate: -45 }}
+                animate={{ scale: 1, opacity: 1, rotate: 0 }}
+                exit={{ scale: 0.5, opacity: 0, rotate: 45 }}
+                transition={{ duration: 0.2 }}
+              >
+                {darkMode ? <Sun size={20} fill="currentColor" fillOpacity={0.2} /> : <Moon size={20} fill="currentColor" fillOpacity={0.2} />}
+              </motion.div>
+            </AnimatePresence>
           </button>
           
           <button
