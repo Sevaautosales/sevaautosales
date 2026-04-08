@@ -49,7 +49,7 @@ function About() {
             Our Story
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white">
-            Trusted <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-500">Stability Specialist</span> in Surat
+            Trusted <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-500">Stability Specialist</span> in India
           </h2>
           <p className="text-lg text-gray-600 dark:text-slate-300">
             We're dedicated to enhancing accessibility through innovative vehicle modifications for individuals with physical disabilities.
