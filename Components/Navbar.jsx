@@ -27,7 +27,7 @@ function Navbar() {
             opacity: 0,
           }}>
           <a href="#" className="flex items-center gap-2.5 text-2xl font-bold text-blue-600 dark:text-blue-400 hover:scale-105 transition-transform duration-300">
-              <img src="logo.svg" alt="" className='h-9'/>
+              <img src="logo.svg" alt="Seva Auto Sales Logo" className='h-9'/>
             <span>Seva Auto Sales</span>             
           </a>
         </div>
