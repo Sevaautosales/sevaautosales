@@ -48,17 +48,17 @@ function Hero() {
                 opacity: 0,
               }}>
               <a
-                href="#services"
-                className="flex items-center justify-center gap-2 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-medium py-3 px-6 rounded-lg shadow-lg transition duration-300 group"
+                href="#solution-wizard"
+                className="flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg shadow-lg transition duration-300 group hover:-translate-y-0.5"
               >
-                Explore Our Services
+                Build Your Solution
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
               <a
-                href="#contact"
-                className="flex items-center justify-center gap-2 bg-transparent border-2 border-slate-500 hover:border-slate-700 hover:bg-slate-100 text-slate-800 dark:border-white/30 dark:hover:border-white/70 dark:hover:bg-white/10 dark:text-white font-medium py-3 px-6 rounded-lg transition duration-300"
+                href="#services"
+                className="flex items-center justify-center gap-2 bg-transparent border-2 border-slate-300 hover:border-blue-400 hover:bg-blue-50 text-slate-700 dark:border-white/30 dark:hover:border-white/60 dark:hover:bg-white/10 dark:text-white font-medium py-3 px-6 rounded-xl transition duration-300"
               >
-                Get a Custom Quote
+                Explore Services
               </a>
             </div>
 

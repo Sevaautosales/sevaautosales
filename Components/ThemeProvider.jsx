@@ -10,12 +10,12 @@ export const useTheme = () => useContext(ThemeContext);
 export const ThemeProvider = ({ children }) => {
   // Start with a placeholder state - we'll set the real value in useEffect
   const [darkMode, setDarkMode] = useState(null);
-  
+
   // Initialize dark mode on component mount
   useEffect(() => {
     // Check if there's a saved preference
     const savedPreference = localStorage.getItem('darkMode');
-    
+
     if (savedPreference === 'light') {
       // User previously selected light mode
       setDarkMode(false);
@@ -34,7 +34,7 @@ export const ThemeProvider = ({ children }) => {
   const toggleDarkMode = () => {
     const newMode = !darkMode;
     setDarkMode(newMode);
-    
+
     // Update document class
     if (newMode) {
       document.documentElement.classList.add('dark');

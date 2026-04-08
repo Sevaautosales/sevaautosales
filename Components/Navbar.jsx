@@ -47,6 +47,9 @@ function Navbar() {
           <a href="#services" className="nav-link text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 relative py-2 transition-colors duration-300">
             Services
           </a>
+          <a href="#solution-wizard" className="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium shadow-sm transition-all duration-300">
+            Build Your Solution
+          </a>
           <a href="#gallery" className="nav-link text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 relative py-2 transition-colors duration-300">
             Gallery
           </a>
@@ -143,6 +146,13 @@ function Navbar() {
               onClick={() => setMenuOpen(false)}
             >
               Services
+            </a>
+            <a 
+              href="#solution-wizard"
+              className="mobile-nav-link inline-flex items-center gap-1.5 px-4 py-2 my-1 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium w-fit"
+              onClick={() => setMenuOpen(false)}
+            >
+              Build Your Solution
             </a>
             <a 
               href="#gallery" 

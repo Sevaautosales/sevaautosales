@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import emailjs from '@emailjs/browser';
 import { Send, Mail, User, Car, Settings, MessageSquare, Phone } from "lucide-react";
 
 function Contact() {
@@ -30,31 +29,38 @@ function Contact() {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-  
-    emailjs
-      .send(
-        "service_nn3qw9n",
-        "template_r95yuxd",
-        {
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "c705a980-4170-4a28-adb4-1465b5e520cd",
+          subject: "New Contact Form Submission - Seva Auto Sales",
+          from_name: "Seva Auto Sales Website",
           name: formData.name,
           email: formData.email,
           phone: formData.phone,
-          vehicleType: formData.vehicleType,
-          modificationType: formData.modificationType,
+          vehicle_type: formData.vehicleType,
+          modification_type: formData.modificationType,
           message: formData.message,
-        },
-        "S_CjYULWPPtvfxH64"
-      )
-      .then(() => {
+        }),
+      });
+
+      const result = await response.json();
+      if (result.success) {
         setFormStatus({
           submitted: true,
           error: false,
           message:
             "Thank you! Your message has been received. We will contact you shortly.",
         });
-  
+
         setFormData({
           name: "",
           email: "",
@@ -63,7 +69,7 @@ function Contact() {
           modificationType: "",
           message: "",
         });
-  
+
         setTimeout(() => {
           setFormStatus({
             submitted: false,
@@ -71,23 +77,25 @@ function Contact() {
             message: "",
           });
         }, 10000); // clear message after 10 seconds
-      })
-      .catch(() => {
-        setFormStatus({
-          submitted: true,
-          error: true,
-          message:
-            "Oops! There was a problem sending your message. Please try again later.",
-        });
-  
-        setTimeout(() => {
-          setFormStatus({
-            submitted: false,
-            error: false,
-            message: "",
-          });
-        }, 10000); // clear error after 10 seconds
+      } else {
+        throw new Error(result.message);
+      }
+    } catch (error) {
+      setFormStatus({
+        submitted: true,
+        error: true,
+        message:
+          "Oops! There was a problem sending your message. Please try again later.",
       });
+
+      setTimeout(() => {
+        setFormStatus({
+          submitted: false,
+          error: false,
+          message: "",
+        });
+      }, 10000); // clear error after 10 seconds
+    }
   };
 
   // Intersection Observer setup
