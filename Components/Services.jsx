@@ -87,7 +87,7 @@ function Services() {
             Best <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Vehicle Modification</span> Services in India
           </h2>
           <p className="text-lg text-slate-600 dark:text-slate-300">
-            We provide comprehensive vehicle modifications tailored to your unique needs and preferences.
+            We provide comprehensive vehicle modifications tailored to your unique needs, specializing in custom vehicle conversions for disabled persons, handicap driving solutions, and accessible mobility.
           </p>
         </div>
         
